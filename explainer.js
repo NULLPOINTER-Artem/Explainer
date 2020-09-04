@@ -12,7 +12,7 @@ console.log(explainedMassive);
  * с типом 'number'/'boolean'/'string' на объект соответствующего типа
  * 
  * @param {object} array массив
- * @returns возвращает новый массив с объяснением
+ * @returns {object} возвращает новый массив с объяснением
  */
 function getExplanation(array) {
     let tempArr = [];
@@ -33,7 +33,7 @@ function getExplanation(array) {
  * 
  * @param {object} array массив
  * @param {number} index текущий индекс массива 
- * @returns возвращает объект String если было выполнено соответствующие условие 
+ * @returns {object} возвращает объект String если было выполнено соответствующие условие 
  *          иначе элемент текущего массива
  */
 function tryReplaceOnObjectOfString(array, index) {
@@ -51,7 +51,7 @@ function tryReplaceOnObjectOfString(array, index) {
  * 
  * @param {object} array массив
  * @param {number} index текущий индекс массива 
- * @returns возвращает объект Boolean если было выполнено соответствующие условие 
+ * @returns {object} возвращает объект Boolean если было выполнено соответствующие условие 
  *          иначе элемент текущего массива
  */
 function tryReplaceOnObjectOfBoolean(array, index) {
@@ -69,7 +69,7 @@ function tryReplaceOnObjectOfBoolean(array, index) {
  * 
  * @param {object} array массив
  * @param {number} index текущий индекс массива 
- * @returns возвращает объект Number если было выполнено соответствующие условие 
+ * @returns {object} возвращает объект Number если было выполнено соответствующие условие 
  *          иначе элемент текущего массива
  */
 function tryReplaceOnObjectOfNumber(array, index) {
@@ -86,7 +86,7 @@ function tryReplaceOnObjectOfNumber(array, index) {
  * Функция создает новый массив без негативных значений из передаваемого массива
  * 
  * @param {object} array массив
- * @returns Возвращает новый массив без негативных значений
+ * @returns {object} Возвращает новый массив без негативных значений
  */
 function removeAllNegativeValues(array) {
     let tempArr = [];
