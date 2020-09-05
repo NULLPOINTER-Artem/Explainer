@@ -20,66 +20,26 @@ function getExplanation(array) {
     tempArr = removeAllNegativeValues(array);
 
     for (let i = 0; i < tempArr.length; i++) {
-        tempArr[i] = tryReplaceOnObjectOfNumber(tempArr, i);
-        tempArr[i] = tryReplaceOnObjectOfString(tempArr, i);
-        tempArr[i] = tryReplaceOnObjectOfBoolean(tempArr, i);
+        tempArr[i] = getObjectOfExplain(tempArr, i);
     }
 
     return tempArr;
 }
 
 /**
- * Функция заменяет все элементы массива с типом 'string' на объект соответствующего типа
+ * Создает объект для описания типа и значения каждого элеманта из массива
  * 
  * @param {object} array массив
- * @param {number} index текущий индекс массива 
- * @returns {object} возвращает объект String если было выполнено соответствующие условие 
- *          иначе элемент текущего массива
+ * @param {number} index текущий индекс массива
+ * @returns {object} Возвращает объект со свойствами type & value для описания каждого элеманта из массива
  */
-function tryReplaceOnObjectOfString(array, index) {
-    if (typeof(array[index]) === 'string') {
-        array[index] = new String(array[index]);
+function getObjectOfExplain(array, index) {
+    let object = {};
 
-        return array[index];
-    } 
+    object.type = ( typeof(array[index]) );
+    object.value = ( array[index] );
 
-    return array[index];
-}
-
-/**
- * Функция заменяет все элементы массива с типом 'boolean' на объект соответствующего типа
- * 
- * @param {object} array массив
- * @param {number} index текущий индекс массива 
- * @returns {object} возвращает объект Boolean если было выполнено соответствующие условие 
- *          иначе элемент текущего массива
- */
-function tryReplaceOnObjectOfBoolean(array, index) {
-    if (typeof(array[index]) === 'boolean') {
-        array[index] = new Boolean(array[index]);
-
-        return array[index];
-    } 
-
-    return array[index];
-}
-
-/**
- * Функция заменяет все элементы массива с типом 'number' на объект соответствующего типа
- * 
- * @param {object} array массив
- * @param {number} index текущий индекс массива 
- * @returns {object} возвращает объект Number если было выполнено соответствующие условие 
- *          иначе элемент текущего массива
- */
-function tryReplaceOnObjectOfNumber(array, index) {
-    if (typeof(array[index]) === 'number') {
-        array[index] = new Number(array[index]);
-
-        return array[index];
-    } 
-
-    return array[index];
+    return object;
 }
 
 /**
