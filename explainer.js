@@ -36,8 +36,14 @@ function getExplanation(array) {
 function getObjectOfExplain(array, index) {
     let object = {};
 
-    object.type = ( typeof(array[index]) );
-    object.value = ( array[index] );
+    if (typeof(array[index]) === 'number' || typeof(array[index]) === 'boolean') {
+        object.type = ( typeof(array[index]) );
+        object.value = ( array[index] );
+    } else if (typeof(array[index]) === 'string') {
+        object.type = ( typeof(array[index]) );
+        object.value = ( array[index] );
+        object.length = ( array[index].length );
+    }
 
     return object;
 }
